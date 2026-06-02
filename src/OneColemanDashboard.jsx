@@ -277,7 +277,7 @@ function ShipperTab() {
           title={
             simplified
               ? "Simulated Shipper Mix — Standardized"
-              : "Current Shipper Stock Keeping Unit (SKU) Complexity"
+              : "Current Shipper SKU Complexity"
           }
           citation="SKU complexity distribution estimated from internal retail operations benchmarking against Procter & Gamble and Unilever global display standardization programs. Standardized scenario modeled on GS1 Retail Display Best Practices framework (2024)."
         >
