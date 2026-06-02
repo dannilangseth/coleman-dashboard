@@ -41,7 +41,7 @@ const COLORS = {
   sage: "#5C7A5C",
 };
 
-const APPLICANT_NAME = "Danni Langseth";
+const APPLICANT_NAME = "Dannielle Langseth";
 
 const marketShareData = [
   { region: "NA (North America)", Coleman: 38, "Premium (YETI)": 22, "Value (Igloo)": 19 },
@@ -336,7 +336,7 @@ const feedbackLoop = [
   { done: true, text: "APAC (Asia-Pacific) sell-through data tagged against VBL (Visual Brand Language) asset variants" },
   { done: true, text: "EMEA (Europe, Middle East & Africa) influencer engagement benchmarked vs. global creative" },
   { done: false, text: "Regional insights consolidated into Global Q3 (Third Quarter) iteration brief" },
-  { done: false, text: "Next-gen 'Urban Escape' asset refresh scoped for FY26 (Fiscal Year 2026)" },
+  { done: false, text: "Next-gen 'Urban Escape' asset refresh scoped for FY27 (Fiscal Year 2027)" },
 ];
 
 function InnovationTab() {
@@ -471,7 +471,7 @@ export default function OneColemanDashboard() {
             className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4"
             style={{ backgroundColor: COLORS.red, color: "white" }}
           >
-            2025–2026 Global Brand Strategy
+            2026–2027 Global Brand Strategy
           </div>
           <h1 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
             Project OneColeman:{" "}
