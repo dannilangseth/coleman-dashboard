@@ -44,10 +44,11 @@ const COLORS = {
 
 const APPLICANT_NAME = "Dannielle Langseth";
 
+// Chart axis labels use acronyms only — terms are defined on first use in narrative text above the charts
 const marketShareData = [
-  { region: "NA (North America)", Coleman: 38, "Premium (YETI)": 22, "Value (Igloo)": 19 },
-  { region: "EMEA (Europe, Middle East & Africa)", Coleman: 24, "Premium (YETI)": 29, "Value (Igloo)": 14 },
-  { region: "APAC (Asia-Pacific)", Coleman: 17, "Premium (YETI)": 31, "Value (Igloo)": 11 },
+  { region: "NA", Coleman: 38, "Premium (YETI)": 22, "Value (Igloo)": 19 },
+  { region: "EMEA", Coleman: 24, "Premium (YETI)": 29, "Value (Igloo)": 14 },
+  { region: "APAC", Coleman: 17, "Premium (YETI)": 31, "Value (Igloo)": 11 },
 ];
 
 const retentionData = [
@@ -71,7 +72,7 @@ const shipperSimplified = [
 
 const PIE_COLORS = [COLORS.khaki, COLORS.charcoal, COLORS.red];
 
-// ── Citation tooltip ─────────────────────────────────────────────────────────
+// ── Citation tooltip ──────────────────────────────────────────────────────────
 
 function CitationTooltip({ source }) {
   const [visible, setVisible] = useState(false);
@@ -168,14 +169,15 @@ function ChartCard({ title, children, citation }) {
   );
 }
 
-// ── Tab 1: Global Market Landscape ────────────────────────────────────────────
+// ── Tab 1: Global Market Landscape ───────────────────────────────────────────
+// First use of NA, EMEA, APAC — defined here, acronym-only everywhere after.
 
 function GlobalTab() {
   return (
     <div>
       <SectionNarrative>
         Bridging the gap between Global intent and Regional execution. Coleman
-        leads in NA (North America), but faces intense challenger threats in EMEA (Europe, Middle East & Africa) and APAC (Asia-Pacific) from
+        leads in North America (NA), but faces intense challenger threats in Europe, Middle East & Africa (EMEA) and Asia-Pacific (APAC) from
         premium, urban-outdoor brands.
       </SectionNarrative>
 
@@ -187,7 +189,7 @@ function GlobalTab() {
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={marketShareData} barGap={6}>
               <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
-              <XAxis dataKey="region" tick={{ fill: COLORS.charcoal, fontSize: 10 }} angle={-12} textAnchor="end" height={50} />
+              <XAxis dataKey="region" tick={{ fill: COLORS.charcoal, fontSize: 12 }} />
               <YAxis tick={{ fill: COLORS.charcoal, fontSize: 12 }} unit="%" />
               <Tooltip cursor={{ fill: "#0000000A" }} />
               <Legend wrapperStyle={{ fontSize: 12 }} />
@@ -233,13 +235,14 @@ function GlobalTab() {
       <TakeawayBox title="Opportunity">
         Pivot global marketing assets to index higher on{" "}
         <strong>"Accessible Weekend Outdoors"</strong> to capture millennial /
-        Gen-Z growth in APAC (Asia-Pacific) and EMEA (Europe, Middle East & Africa).
+        Gen-Z growth in APAC and EMEA.
       </TakeawayBox>
     </div>
   );
 }
 
 // ── Tab 2: Retail & Shipper Simplification ────────────────────────────────────
+// First use of SKU — defined in chart title. VBL already defined in KPI header.
 
 function ImpactStat({ icon: Icon, value, label, citation }) {
   return (
@@ -266,7 +269,7 @@ function ShipperTab() {
     <div>
       <SectionNarrative>
         Streamlining retail execution to drive margin expansion and enforce
-        VBL (Visual Brand Language) globally.
+        VBL globally.
       </SectionNarrative>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -274,7 +277,7 @@ function ShipperTab() {
           title={
             simplified
               ? "Simulated Shipper Mix — Standardized"
-              : "Current Shipper SKU (Stock Keeping Unit) Complexity"
+              : "Current Shipper Stock Keeping Unit (SKU) Complexity"
           }
           citation="SKU complexity distribution estimated from internal retail operations benchmarking against Procter & Gamble and Unilever global display standardization programs. Standardized scenario modeled on GS1 Retail Display Best Practices framework (2024)."
         >
@@ -344,7 +347,7 @@ function ShipperTab() {
             <ImpactStat
               icon={Layers}
               value="-35%"
-              label="SKU (Stock Keeping Unit) Reduction"
+              label="SKU Reduction"
               citation="SKU reduction estimate benchmarked against Unilever's brand simplification program (2023), which achieved 30–40% SKU reductions globally. Source: Unilever Annual Report (2023); GS1 Best Practice Guidelines (2024)."
             />
             <ImpactStat
@@ -365,41 +368,42 @@ function ShipperTab() {
 
       <TakeawayBox title="Margin Thesis">
         By standardizing the physical footprint of global shippers while allowing
-        regional teams to swap out the VBL (Visual Brand Language)-approved graphic headers, we protect
+        regional teams to swap out the VBL-approved graphic headers, we protect
         brand equity while saving millions in procurement.
       </TakeawayBox>
     </div>
   );
 }
 
-// ── Tab 3: Innovation & Asset Pipeline ────────────────────────────────────────
+// ── Tab 3: Innovation & Asset Pipeline ───────────────────────────────────────
+// First use of OTIF — defined in narrative. VBL, SKU already defined above.
 
 const roadmap = [
   {
     phase: "Phase 1 — Global",
     icon: Globe,
-    title: "Core Asset Development & VBL (Visual Brand Language) Toolkit",
-    desc: "Master photography, key visuals, and the VBL (Visual Brand Language) toolkit built once at the center.",
+    title: "Core Asset Development & VBL Toolkit",
+    desc: "Master photography, key visuals, and the VBL toolkit built once at the center.",
   },
   {
     phase: "Phase 2 — Regional",
     icon: Megaphone,
     title: "Local Market Adaptation & Influencer Sourcing",
-    desc: "Regional teams localize copy, source urban-outdoor influencers, and adapt within VBL (Visual Brand Language) guardrails.",
+    desc: "Regional teams localize copy, source urban-outdoor influencers, and adapt within VBL guardrails.",
   },
   {
     phase: "Phase 3 — Retail",
     icon: Truck,
     title: "Standardized Shipper Deployment",
-    desc: "Single global shipper footprint with swappable VBL (Visual Brand Language) headers ships OTIF (On-Time, In-Full).",
+    desc: "Single global shipper footprint with swappable VBL headers ships OTIF.",
   },
 ];
 
 const feedbackLoop = [
-  { done: true, text: "APAC (Asia-Pacific) sell-through data tagged against VBL (Visual Brand Language) asset variants" },
-  { done: true, text: "EMEA (Europe, Middle East & Africa) influencer engagement benchmarked vs. global creative" },
-  { done: false, text: "Regional insights consolidated into Global Q3 (Third Quarter) iteration brief" },
-  { done: false, text: "Next-gen 'Urban Escape' asset refresh scoped for FY27 (Fiscal Year 2027)" },
+  { done: true,  text: "APAC sell-through data tagged against VBL asset variants" },
+  { done: true,  text: "EMEA influencer engagement benchmarked vs. global creative" },
+  { done: false, text: "Regional insights consolidated into Global Third Quarter (Q3) iteration brief" },
+  { done: false, text: "Next-gen 'Urban Escape' asset refresh scoped for Fiscal Year 2027 (FY27)" },
 ];
 
 function InnovationTab() {
@@ -407,7 +411,7 @@ function InnovationTab() {
     <div>
       <SectionNarrative>
         Ensuring innovation feedback loops are bidirectional and marketing assets
-        are delivered OTIF (On-Time, In-Full).
+        are delivered On-Time, In-Full (OTIF).
       </SectionNarrative>
 
       <div className="bg-white rounded-2xl p-6 shadow-sm border border-black/5 mb-6">
@@ -489,9 +493,9 @@ function InnovationTab() {
 // ── Shell ─────────────────────────────────────────────────────────────────────
 
 const TABS = [
-  { id: "global", label: "Global Market Landscape", icon: Globe },
-  { id: "shipper", label: "Retail & Shipper Simplification", icon: Package },
-  { id: "innovation", label: "Innovation & Asset Pipeline", icon: Megaphone },
+  { id: "global",     label: "Global Market Landscape",          icon: Globe },
+  { id: "shipper",    label: "Retail & Shipper Simplification",   icon: Package },
+  { id: "innovation", label: "Innovation & Asset Pipeline",       icon: Megaphone },
 ];
 
 export default function OneColemanDashboard() {
@@ -503,19 +507,12 @@ export default function OneColemanDashboard() {
       className="min-h-screen text-[15px]"
     >
       {/* Sticky Nav */}
-      <nav
-        className="sticky top-0 z-50 shadow-md"
-        style={{ backgroundColor: COLORS.evergreen }}
-      >
+      <nav className="sticky top-0 z-50 shadow-md" style={{ backgroundColor: COLORS.evergreen }}>
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Tent size={24} color={COLORS.red} />
-            <span className="text-white font-bold tracking-wide text-lg">
-              COLEMAN
-            </span>
-            <span className="text-white/50 text-sm hidden sm:inline">
-              | Global Brand Management
-            </span>
+            <span className="text-white font-bold tracking-wide text-lg">COLEMAN</span>
+            <span className="text-white/50 text-sm hidden sm:inline">| Global Brand Management</span>
           </div>
           <div className="flex items-center gap-2 text-white/80 text-sm">
             <ShieldCheck size={16} color={COLORS.red} />
@@ -524,12 +521,10 @@ export default function OneColemanDashboard() {
         </div>
       </nav>
 
-      {/* Hero */}
+      {/* Hero — first use of VBL defined here */}
       <header
         className="px-6 pt-10 pb-8"
-        style={{
-          background: `linear-gradient(135deg, ${COLORS.evergreen} 0%, #142b1a 100%)`,
-        }}
+        style={{ background: `linear-gradient(135deg, ${COLORS.evergreen} 0%, #142b1a 100%)` }}
       >
         <div className="max-w-6xl mx-auto">
           <div
@@ -540,19 +535,16 @@ export default function OneColemanDashboard() {
           </div>
           <h1 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
             Project OneColeman:{" "}
-            <span style={{ color: COLORS.khaki }}>
-              Global Consistency, Regional Relevance
-            </span>
+            <span style={{ color: COLORS.khaki }}>Global Consistency, Regional Relevance</span>
           </h1>
           <p className="text-white/70 mt-3">
             Prepared by {APPLICANT_NAME} | Assistant Brand Manager Candidate
           </p>
 
-          {/* KPI Row */}
           <div className="flex flex-wrap gap-4 mt-8">
             <KpiCard
               icon={ShieldCheck}
-              label="Global VBL (Visual Brand Language) Compliance"
+              label="Global Visual Brand Language (VBL) Compliance"
               value="88%"
               sub="Target: 95% — closing the execution gap"
               accent={COLORS.red}
@@ -580,7 +572,10 @@ export default function OneColemanDashboard() {
 
       {/* Tabs */}
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-wrap gap-2 -mt-px py-4 sticky top-[60px] z-40" style={{ backgroundColor: COLORS.canvas }}>
+        <div
+          className="flex flex-wrap gap-2 -mt-px py-4 sticky top-[60px] z-40"
+          style={{ backgroundColor: COLORS.canvas }}
+        >
           {TABS.map((t) => {
             const active = tab === t.id;
             return (
@@ -602,16 +597,13 @@ export default function OneColemanDashboard() {
         </div>
 
         <main className="pb-16 pt-2">
-          {tab === "global" && <GlobalTab />}
-          {tab === "shipper" && <ShipperTab />}
+          {tab === "global"     && <GlobalTab />}
+          {tab === "shipper"    && <ShipperTab />}
           {tab === "innovation" && <InnovationTab />}
         </main>
       </div>
 
-      <footer
-        className="text-center text-xs text-white/60 py-6"
-        style={{ backgroundColor: COLORS.evergreen }}
-      >
+      <footer className="text-center text-xs text-white/60 py-6" style={{ backgroundColor: COLORS.evergreen }}>
         <div className="flex items-center justify-center gap-2">
           <BarChart3 size={14} color={COLORS.khaki} />
           Project OneColeman — Strategic Brand Dashboard | {APPLICANT_NAME}
