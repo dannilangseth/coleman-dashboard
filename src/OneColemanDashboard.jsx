@@ -44,9 +44,9 @@ const COLORS = {
 const APPLICANT_NAME = "Danni Langseth";
 
 const marketShareData = [
-  { region: "NA", Coleman: 38, "Premium (YETI)": 22, "Value (Igloo)": 19 },
-  { region: "EMEA", Coleman: 24, "Premium (YETI)": 29, "Value (Igloo)": 14 },
-  { region: "APAC", Coleman: 17, "Premium (YETI)": 31, "Value (Igloo)": 11 },
+  { region: "NA (North America)", Coleman: 38, "Premium (YETI)": 22, "Value (Igloo)": 19 },
+  { region: "EMEA (Europe, Middle East & Africa)", Coleman: 24, "Premium (YETI)": 29, "Value (Igloo)": 14 },
+  { region: "APAC (Asia-Pacific)", Coleman: 17, "Premium (YETI)": 31, "Value (Igloo)": 11 },
 ];
 
 const retentionData = [
@@ -139,7 +139,7 @@ function GlobalTab() {
     <div>
       <SectionNarrative>
         Bridging the gap between Global intent and Regional execution. Coleman
-        leads in NA, but faces intense challenger threats in EMEA and APAC from
+        leads in NA (North America), but faces intense challenger threats in EMEA (Europe, Middle East & Africa) and APAC (Asia-Pacific) from
         premium, urban-outdoor brands.
       </SectionNarrative>
 
@@ -148,7 +148,7 @@ function GlobalTab() {
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={marketShareData} barGap={6}>
               <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
-              <XAxis dataKey="region" tick={{ fill: COLORS.charcoal, fontSize: 12 }} />
+              <XAxis dataKey="region" tick={{ fill: COLORS.charcoal, fontSize: 10 }} angle={-12} textAnchor="end" height={50} />
               <YAxis tick={{ fill: COLORS.charcoal, fontSize: 12 }} unit="%" />
               <Tooltip cursor={{ fill: "#0000000A" }} />
               <Legend wrapperStyle={{ fontSize: 12 }} />
@@ -191,7 +191,7 @@ function GlobalTab() {
       <TakeawayBox title="Opportunity">
         Pivot global marketing assets to index higher on{" "}
         <strong>"Accessible Weekend Outdoors"</strong> to capture millennial /
-        Gen-Z growth in APAC and EMEA.
+        Gen-Z growth in APAC (Asia-Pacific) and EMEA (Europe, Middle East & Africa).
       </TakeawayBox>
     </div>
   );
@@ -221,7 +221,7 @@ function ShipperTab() {
     <div>
       <SectionNarrative>
         Streamlining retail execution to drive margin expansion and enforce
-        Visual Brand Language (VBL) globally.
+        VBL (Visual Brand Language) globally.
       </SectionNarrative>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -229,7 +229,7 @@ function ShipperTab() {
           title={
             simplified
               ? "Simulated Shipper Mix — Standardized"
-              : "Current Shipper SKU Complexity"
+              : "Current Shipper SKU (Stock Keeping Unit) Complexity"
           }
         >
           <ResponsiveContainer width="100%" height={300}>
@@ -295,7 +295,7 @@ function ShipperTab() {
           </div>
 
           <div className="grid grid-cols-3 gap-4">
-            <ImpactStat icon={Layers} value="-35%" label="SKU Reduction" />
+            <ImpactStat icon={Layers} value="-35%" label="SKU (Stock Keeping Unit) Reduction" />
             <ImpactStat icon={Package} value="+18%" label="Material Savings" />
             <ImpactStat icon={Truck} value="+2 wks" label="Execution Speed" />
           </div>
@@ -304,7 +304,7 @@ function ShipperTab() {
 
       <TakeawayBox title="Margin Thesis">
         By standardizing the physical footprint of global shippers while allowing
-        regional teams to swap out the VBL-approved graphic headers, we protect
+        regional teams to swap out the VBL (Visual Brand Language)-approved graphic headers, we protect
         brand equity while saving millions in procurement.
       </TakeawayBox>
     </div>
@@ -315,28 +315,28 @@ const roadmap = [
   {
     phase: "Phase 1 — Global",
     icon: Globe,
-    title: "Core Asset Development & VBL Toolkit",
-    desc: "Master photography, key visuals, and the Visual Brand Language toolkit built once at the center.",
+    title: "Core Asset Development & VBL (Visual Brand Language) Toolkit",
+    desc: "Master photography, key visuals, and the VBL (Visual Brand Language) toolkit built once at the center.",
   },
   {
     phase: "Phase 2 — Regional",
     icon: Megaphone,
     title: "Local Market Adaptation & Influencer Sourcing",
-    desc: "Regional teams localize copy, source urban-outdoor influencers, and adapt within VBL guardrails.",
+    desc: "Regional teams localize copy, source urban-outdoor influencers, and adapt within VBL (Visual Brand Language) guardrails.",
   },
   {
     phase: "Phase 3 — Retail",
     icon: Truck,
     title: "Standardized Shipper Deployment",
-    desc: "Single global shipper footprint with swappable VBL headers ships On-Time, In-Full (OTIF).",
+    desc: "Single global shipper footprint with swappable VBL (Visual Brand Language) headers ships OTIF (On-Time, In-Full).",
   },
 ];
 
 const feedbackLoop = [
-  { done: true, text: "APAC sell-through data tagged against VBL asset variants" },
-  { done: true, text: "EMEA influencer engagement benchmarked vs. global creative" },
-  { done: false, text: "Regional insights consolidated into Global Q3 iteration brief" },
-  { done: false, text: "Next-gen 'Urban Escape' asset refresh scoped for FY26" },
+  { done: true, text: "APAC (Asia-Pacific) sell-through data tagged against VBL (Visual Brand Language) asset variants" },
+  { done: true, text: "EMEA (Europe, Middle East & Africa) influencer engagement benchmarked vs. global creative" },
+  { done: false, text: "Regional insights consolidated into Global Q3 (Third Quarter) iteration brief" },
+  { done: false, text: "Next-gen 'Urban Escape' asset refresh scoped for FY26 (Fiscal Year 2026)" },
 ];
 
 function InnovationTab() {
@@ -344,7 +344,7 @@ function InnovationTab() {
     <div>
       <SectionNarrative>
         Ensuring innovation feedback loops are bidirectional and marketing assets
-        are delivered On-Time and In-Full (OTIF).
+        are delivered OTIF (On-Time, In-Full).
       </SectionNarrative>
 
       <div className="bg-white rounded-2xl p-6 shadow-sm border border-black/5 mb-6">
@@ -487,7 +487,7 @@ export default function OneColemanDashboard() {
           <div className="flex flex-wrap gap-4 mt-8">
             <KpiCard
               icon={ShieldCheck}
-              label="Global VBL Compliance"
+              label="Global VBL (Visual Brand Language) Compliance"
               value="88%"
               sub="Target: 95% — closing the execution gap"
               accent={COLORS.red}
