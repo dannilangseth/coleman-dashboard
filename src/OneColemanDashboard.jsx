@@ -650,11 +650,7 @@ function SourcesTab() {
         style={{ borderColor: COLORS.khaki, backgroundColor: COLORS.khaki + "15" }}
       >
         <strong style={{ color: COLORS.evergreen }}>A note on methodology: </strong>
-        Strategic brand presentations routinely use modeled projections alongside published data.
-        Every projection here applies a conservative, published industry benchmark to a realistic
-        assumption about Coleman's scale — the same approach used by McKinsey, Bain, and internal
-        strategy teams at Newell Brands. The goal is not to present these as audited financials,
-        but to demonstrate a rigorous, data-informed way of thinking.
+        The goal is not to present these as audited financials, but to demonstrate a rigorous, data-informed way of thinking.
       </div>
     </div>
   );
